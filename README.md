@@ -1,2 +1,3 @@
--clone the repo
--run -> npn i
+=> clone the repo
+<br>
+=> run -> npn i
