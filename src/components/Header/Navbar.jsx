@@ -1,15 +1,36 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const menu = (
   <>
     <li>
-      <Link to={'/'}>Home</Link>
+      <NavLink
+        to="/"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "active" : ""
+        }
+      >
+        Home
+      </NavLink>
     </li>
     <li>
-    <Link to={'/registration'}>Registration</Link>
+      <NavLink
+        to="/registration"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "active" : ""
+        }
+      >
+        Registration
+      </NavLink>
     </li>
     <li>
-    <Link to={'/login'}>Login</Link>
+      <NavLink
+        to="/login"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "active" : ""
+        }
+      >
+        Login
+      </NavLink>
     </li>
   </>
 );
@@ -47,9 +68,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-lg">
-          {menu}
-        </ul>
+        <ul className="menu menu-horizontal px-1 text-lg">{menu}</ul>
       </div>
       <div className="navbar-end">
         <a className="btn">Logout</a>
